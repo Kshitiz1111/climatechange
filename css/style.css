@@ -388,47 +388,52 @@ table img{
     color: #9c3e1a;
 }
 
-.individual_page video{
+.primary_container video{
     display: block;
     margin: auto;
     width:50%;
-    height:450px;
+    height:360px;
 }
-.individual_page video:hover{
+.individual{
+    height: auto;
+    padding: 3em 0em;
+}
+.primary_container .videobox {
+    padding-top: 0px!important;
+    background-color: white;
+}
+.primary_container video:hover{
     cursor: pointer;
 }
-.individual_page video::-webkit-media-controls-play-button{
-    background-color:#9C3E1A;
-    left: 45%;
-    border-radius: 50px;
-    display: none;
-}
-.individual_page video::-webkit-media-controls-timeline{
+.primary_container video::-webkit-media-controls-timeline{
    width: 50%;
    bottom: 0px;
-   padding: 1px;
+   left:0;
+   right:0;
+   margin-left:auto;
+   margin-right:auto;
+   padding: 2px;
    position: absolute;
    background-color: #9C3E1A;
-   box-shadow:0px 5px 1px black;
 }
 
-.individual_page video::-webkit-media-controls-panel{
+.primary_container video::-webkit-media-controls-panel{
     background-image: none!important;
 }
-.individual_page video::-webkit-media-controls-play-button{ color: red;}
-.individual_page video::-webkit-media-controls-volume-slider-container{ display: none;}
-.individual_page video::-webkit-media-controls-volume-slider{ display: none;}
-.individual_page video::-webkit-media-controls-mute-button{ display: none;}
-.individual_page video::-webkit-media-controls-current-time-display{ display: none;}
-.individual_page video::-webkit-full-page-media::-webkit-media-controls-panel{background-color: red;}
-.individual_page video::-webkit-media-controls-timeline-container{ display: none;}
-.individual_page video::-webkit-media-controls-time-remaining-display{display: none;}
-.individual_page video::-webkit-media-controls-seek-back-button{display: none;}
-.individual_page video::-webkit-media-controls-seek-forward-button{display: none;}
-.individual_page video::-webkit-media-controls-fullscreen-button{display: none;}
-.individual_page video::-webkit-media-controls-rewind-button{display: none;}
-.individual_page video::-webkit-media-controls-return-to-realtime-button{display: none;}
-.individual_page video::-webkit-media-controls-toggle-closed-captions-button{display: none;}
+.primary_container video::-webkit-media-controls-play-button{ color: red;}
+.primary_container video::-webkit-media-controls-volume-slider-container{ display: none;}
+.primary_container video::-webkit-media-controls-volume-slider{ display: none;}
+.primary_container video::-webkit-media-controls-mute-button{ display: none;}
+.primary_container video::-webkit-media-controls-current-time-display{ display: none;}
+.primary_container video::-webkit-full-page-media::-webkit-media-controls-panel{background-color: red;}
+.primary_container video::-webkit-media-controls-timeline-container{ display: none;}
+.primary_container video::-webkit-media-controls-time-remaining-display{display: none;}
+.primary_container video::-webkit-media-controls-seek-back-button{display: none;}
+.primary_container video::-webkit-media-controls-seek-forward-button{display: none;}
+.primary_container video::-webkit-media-controls-fullscreen-button{display: none;}
+.primary_container video::-webkit-media-controls-rewind-button{display: none;}
+.primary_container video::-webkit-media-controls-return-to-realtime-button{display: none;}
+.primary_container video::-webkit-media-controls-toggle-closed-captions-button{display: none;}
 
 /* action bar */
 .action_bar{
