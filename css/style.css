@@ -312,7 +312,8 @@ fieldset{
 }
 .shade:nth-child(odd){
     background-color: #F5F5F4;
-
+    padding: 20px;
+    width: auto;
 }
 .current_page .info{
     width: 50%;
@@ -384,27 +385,9 @@ table img{
 .hashtag h2{
     padding: 1em;
     margin: 0px;
+    color: #9c3e1a;
 }
-/* click to copy */
-.show_copied_text{
-    position: absolute;
-    font-size: 2em;
-    bottom:45%;
-    right: 45%;
-    color: white;
-    background-color: #a5a5a5;
-    padding: 8px;
-    border-radius: 10px;
-}
-.hide_copied_text{
-    position: absolute;
-    bottom: 1px;
-    right: 1px;
-    visibility: hidden;
-}
-.hashtag_box:hover{
-    cursor: pointer;
-}
+
 .individual_page video{
     display: block;
     margin: auto;
@@ -422,10 +405,11 @@ table img{
 }
 .individual_page video::-webkit-media-controls-timeline{
    width: 50%;
-   top: 0px;
-   padding: 0px;
+   bottom: 0px;
+   padding: 1px;
    position: absolute;
    background-color: #9C3E1A;
+   box-shadow:0px 5px 1px black;
 }
 
 .individual_page video::-webkit-media-controls-panel{
@@ -435,7 +419,6 @@ table img{
 .individual_page video::-webkit-media-controls-volume-slider-container{ display: none;}
 .individual_page video::-webkit-media-controls-volume-slider{ display: none;}
 .individual_page video::-webkit-media-controls-mute-button{ display: none;}
-
 .individual_page video::-webkit-media-controls-current-time-display{ display: none;}
 .individual_page video::-webkit-full-page-media::-webkit-media-controls-panel{background-color: red;}
 .individual_page video::-webkit-media-controls-timeline-container{ display: none;}

@@ -9,10 +9,6 @@ const page_heading = document.querySelectorAll('div > h1,h2,summary,fieldset > l
 const page_paragraph = document.querySelectorAll('div > p,li,a,i,fieldset > p,details > p,legend > a');
 const active_link = document.querySelector('#active');
 
-const hashtag_container = document.querySelector('.hashtag_box');
-const hashtags = document.querySelectorAll('.hashtag > h2');
-const guide_tocopy = document.querySelector('.copy');
-
 const subscribe_btn = document.querySelector('.subs_open');
 const subscribe_close_btn = document.querySelector('.subs_close');
 const subscribe_form = document.querySelector('.subs_form');
@@ -82,25 +78,6 @@ function play() {
     audio.play();
   }
 
-// hashtags functions
-function show(){
-    guide_tocopy.textContent ='copied';
-    let text=[];
-    hashtags.forEach(function(item){
-    text.push(item.innerText);
-    });
-    text.select();
-    document.execCommand('copy');
-}
-function hide(){
-    guide_tocopy.textContent ='click to copy';
-}
-function hold(){
-    guide_tocopy.classList.remove('hide_copied_text');
-    guide_tocopy.classList.add('show_copied_text');
-}
-//  close hashtags functions
-
 window.onload = default_theme();
 
 change_mode_btn.addEventListener('click',function(){
@@ -113,36 +90,7 @@ change_mode_btn.addEventListener('click',function(){
     }
 });
 
-// hashtags events
-window.onload = function(){
-    guide_tocopy.classList.add('hide_copied_text');
-    subscribe_form.classList.add('hide_form');
-}
-
-hashtag_container.addEventListener('click',function(){
-    if(guide_tocopy.textContent == 'click to copy'){
-        show();
-
-    }else if(guide_tocopy.textContent == 'copied'){
-        hide();
-
-    }
-});
-
-hashtag_container.addEventListener('mouseover',function(){
-    guide_tocopy.classList.remove('hide_copied_text');
-    guide_tocopy.classList.add('show_copied_text');
-});
-
-hashtag_container.addEventListener('mouseout',function(){
-    guide_tocopy.classList.remove('show_copied_text');
-    guide_tocopy.classList.add('hide_copied_text');
-
-    if(guide_tocopy.textContent == 'copied'){
-        hold();
-    }
-});
-//close hashtag events
+//subscribe form
 subscribe_btn.addEventListener('click',function(){
     subscribe_form.classList.remove('hide_form');
     subscribe_form.classList.add('show_form');
