@@ -76,6 +76,12 @@ function default_theme(){
 
 }
 
+// play audio on click
+function play() {
+    var audio = new Audio("../audio/clickuiaudio.mp3");
+    audio.play();
+  }
+
 // hashtags functions
 function show(){
     guide_tocopy.textContent ='copied';
@@ -100,8 +106,10 @@ window.onload = default_theme();
 change_mode_btn.addEventListener('click',function(){
     if(change_mode_btn.getAttribute('data') === 'night'){
         dark_theme();
+        play();
     }else if(change_mode_btn.getAttribute('data') === 'day' ){
         default_theme();
+        play();
     }
 });
 
@@ -114,10 +122,10 @@ window.onload = function(){
 hashtag_container.addEventListener('click',function(){
     if(guide_tocopy.textContent == 'click to copy'){
         show();
-    
+
     }else if(guide_tocopy.textContent == 'copied'){
         hide();
-    
+
     }
 });
 
