@@ -435,7 +435,7 @@ table img{
 .individual_page video::-webkit-media-controls-volume-slider-container{ display: none;}
 .individual_page video::-webkit-media-controls-volume-slider{ display: none;}
 .individual_page video::-webkit-media-controls-mute-button{ display: none;}
-.individual_page video::-webkit-media-controls-timeline{ background-color: ;}
+
 .individual_page video::-webkit-media-controls-current-time-display{ display: none;}
 .individual_page video::-webkit-full-page-media::-webkit-media-controls-panel{background-color: red;}
 .individual_page video::-webkit-media-controls-timeline-container{ display: none;}
