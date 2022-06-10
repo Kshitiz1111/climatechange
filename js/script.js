@@ -91,6 +91,7 @@ change_mode_btn.addEventListener('click',function(){
 });
 
 //subscribe form
+window.onload = ()=>{subscribe_form.classList.add('hide_form');}
 subscribe_btn.addEventListener('click',function(){
     subscribe_form.classList.remove('hide_form');
     subscribe_form.classList.add('show_form');

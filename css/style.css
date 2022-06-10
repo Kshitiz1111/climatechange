@@ -561,6 +561,55 @@ footer a:hover{
     transition: 1s;
 }
 
+/* login and register */
+.register_login{
+    width: 50%;
+    margin: auto;
+}
+.register_login form{
+    width: 50%;
+    border: 1px solid grey;
+    padding: 20px;
+    margin: 3em auto;
+    border-radius: 20px;
+}
+.register_login form h2{
+    text-align: center;
+    color: #9C3E1A;
+    font-weight: 900;
+}
+.register_login form p{
+    padding: 5px 0px;
+}
+.register_login form input{
+    padding: 10px;
+    width: -webkit-fill-available;
+    border-radius: 20px;
+    border: 1px solid grey;
+}
+.register_login form input[type='submit']{
+    background-color: #9C3E1A;
+    color: white;
+    border: 3px solid #9C3E1A;
+    font-weight: 600;
+    margin: 30px 50px 10px 50px;
+
+}
+.show_pwd{
+    position: relative;
+}
+.show_pwd i{
+    position: absolute;
+    top: 32%;
+    right: 4%;
+}
+.fa-eye{
+    display: none;
+}
+.fa-eye-slash{
+    display: block;
+}
+
 
 
 @media only screen and (max-width:600px) {
@@ -626,3 +675,5 @@ footer a:hover{
         right: 1px;
     }
 }
+
+
