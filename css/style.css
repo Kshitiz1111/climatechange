@@ -562,6 +562,20 @@ footer a:hover{
 }
 
 /* login and register */
+.error_msg{
+    position: absolute;
+    right: 5%;
+    background-color: #D42538;
+    border-radius: 20px;
+    padding: 10px;
+}
+.error_msg ul{
+    margin: 0px;
+    padding: 0px;
+
+    color: white;
+}
+
 .register_login{
     width: 50%;
     margin: auto;
@@ -603,11 +617,11 @@ footer a:hover{
     top: 32%;
     right: 4%;
 }
-.fa-eye{
-    display: none;
-}
-.fa-eye-slash{
+#s{
     display: block;
+}
+#h{
+    display: none;
 }
 
 
@@ -667,6 +681,12 @@ footer a:hover{
     .hashtag h2{
         font-size: 1em;
         padding: 1em;
+    }
+    .register_login{
+        width: 100%;
+    }
+    .register_login form{
+        width: 80%;
     }
 }
 @media only screen and (min-width:600px){

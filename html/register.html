@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
 
     <script src="https://kit.fontawesome.com/ac673f3b28.js" crossorigin="anonymous"></script>
-    <script src="../js/script.js" defer></script>
+   
     <script src="../js/validate.js" defer></script>
+    <script src="../js/script.js" defer></script>
     <title>register</title>
 </head>
 <body class="dark_theme">
@@ -32,24 +33,25 @@
     </div>
 </nav>
 
+<div id="errro_msg"></div>
 <div class="register_login" >
 
-    <form action="">
+    <form id="form"action="" onsubmit="event.preventDefault(); finalCheck()" >
         <h2>Register</h2>
         <p>username</p>
-        <input type="text">
+        <input type="text" id="u_name">
         <p>email</p>
-        <input type="email">
+        <input type="email" id="u_email">
         <p>password</p>
-        <input type="password">
+        <input type="password" id="pwd">
        
             <p>confirm password</p>
         <div class="show_pwd">   
-            <input type="password">
-            <i class="fa fa-eye"></i>
-            <i class="fa fa-eye-slash"></i>
+            <input type="password" id="c_pwd">
+            <i class="fa fa-eye" id="s"></i>
+            <i class="fa fa-eye-slash" id="h"></i>
         </div>
-        <input type="submit">
+        <input type="submit"  >
 
     </form>
 </div>
