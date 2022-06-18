@@ -11,6 +11,12 @@
 
     <script src="https://kit.fontawesome.com/ac673f3b28.js" crossorigin="anonymous"></script>
     <script src="../js/script.js" defer></script>
+    
+    <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <title>Document</title>
 </head>
 <body>
@@ -87,11 +93,25 @@
             </div>
         </div>
 
-        <div class="videobox dark_theme">
-            <h2>Don't Choose Extintion</h2>
-            <iframe src="https://www.youtube.com/embed/VaTgTiUhEJg?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="photobox dark_theme">
+            <div class="top_text">
+                <h2>Images of change</h2>
+            </div>
+                <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="../image/1.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../image/2.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../image/3.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../image/4.png" alt=""></div>
+                    <div class="swiper-slide"><img src="../image/5.png" alt=""></div>v>
+                </div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
-
+        <script src="../js/swiper.js"></script>
         <div class="primary_container outercontributer dark_theme">
             <h2>Major Contributer</h2>
             <p>Of Climate Change</p>

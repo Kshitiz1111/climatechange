@@ -254,27 +254,53 @@ details p{
     width: 400px;
 }
 
-/* video box */
-.videobox{
-    width: 100%;
-    height: 635px;
-    padding-top: 4em;
-    background-color: rgb(61 62 42 / 3%);
-}
-.videobox h2{
+/* photo box */
+.top_text h2{
     width: fit-content;
-    text-align: center;
+    margin: 1em auto 1em auto;
     font-size: 1.8em;
     color: #3D3E2A;
     border-bottom: 1px solid #3D3E2A;
-    margin: 0em auto 2em auto;
+    
 }
-.videobox iframe{
-    display: block;
-    margin: auto;
-    width:70%;
-    height:450px;
+.photobox{
+    width: 100%;
+    margin-bottom: 5em;
+}
+.swiper {
+    width:1000px!important;
+    height: 400px!important;
+}
 
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 900px;
+    object-fit: cover;
+}
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after{
+    display: none;
+}
+.swiper-button-prev:after, .swiper-rtl .swiper-button-next:after{
+    display: none;
 }
 
 /*Contributer  */
@@ -560,7 +586,10 @@ footer a:hover{
     visibility: hidden;
     transition: 1s;
 }
-
+.swiper {
+    width: 600px;
+    height: 300px;
+  }
 /* login and register */
 .error_msg{
     position: absolute;
@@ -687,6 +716,16 @@ footer a:hover{
     }
     .register_login form{
         width: 80%;
+    }
+    .swiper{
+        width: 100%!important;
+        height: 100%!important;
+    }
+    .swiper-slide img{
+        width: 90%;
+    }
+    .photobox{
+        margin-bottom: 2em;
     }
 }
 @media only screen and (min-width:600px){
