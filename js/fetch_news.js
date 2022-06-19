@@ -3,7 +3,7 @@ const form = document.querySelector("form");
 const search_box = document.querySelector("#search_box");
 const search_btn = document.querySelector("#search_btn");
 const content_box = document.querySelector(".content");
-const close_news = document.querySelector(".main_news>.content_div>.content>.fa-close");
+const close_news = document.querySelector("#close_news_btn");
 const background = document.querySelector(".background");
 const news_btn = document.querySelector(".news");
 
@@ -81,4 +81,4 @@ news_btn.onclick = ()=>{
     main_news_div.style.display = "block";
 }
 form.addEventListener("submit", getData);
-// window.addEventListener("load", getData);
+window.addEventListener("load", getData);

@@ -3,7 +3,7 @@ body{
     padding:0;
 }
 .background{
-    position: absolute;
+    position: fixed;
     background: rgb(26 26 26 / 85%);
     width: 100%;
     height: 100%;
@@ -63,7 +63,7 @@ body h1,h2,p,summary,li,a,legend,button,i{
 
 /* news */
 .main_news{
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 2;
     display: none;
@@ -90,15 +90,19 @@ body h1,h2,p,summary,li,a,legend,button,i{
     width: 90%;
     height: 75vh;
     display: block;
-    margin: 20px auto;
+    margin: 45px auto;
     padding: 10px;
     background-color: #efefef;
     border-radius: 20px;
     overflow-y: scroll;
 }
 .main_news .content_div .fa-close{
-    float: right;
-    font-size: 20px;
+    font-size: 25px;
+    position: fixed;
+    top: 80px;
+    color: white;
+    right: 50px;
+    cursor: pointer;
 }
 .main_news article{
     position: relative;
