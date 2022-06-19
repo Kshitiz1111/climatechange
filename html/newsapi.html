@@ -1,0 +1,134 @@
+<!-- apikey =  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>news</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .main_news{
+        width: 100%;
+        height: 100vh;
+    }
+    .main_news .header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #;
+    }
+    .main_news input{
+        padding: 10px;
+        border-radius: 20px;
+        border: none;
+    }
+    .main_news .content{
+        width: 90%;
+        height: 100vh;
+        display: block;
+        margin: 20px auto;
+        padding: 10px;
+        background-color: grey;
+        border-radius: 20px;
+        overflow-y: scroll;
+    }
+    .main_news article{
+        position: relative;
+        width: 95%;
+        height: fit-content;
+        padding: 5px;
+        margin: 10px auto;
+        border-radius: 20px;
+        background-color: white;
+    }
+</style>
+<body>
+  <div class="main_news">
+    <div class="header">
+        <div class="title"><h2>News</h2></div>
+        <div class="search">
+            <form action="">
+                <input id="search_box" type="text" value="climate change">
+                <input id="search_btn" type="submit" value="search">
+            </form>
+        </div>
+    </div>
+    <div class="content">
+    
+    </div>
+    
+  </div>  
+
+  <script>
+    const form = document.querySelector("form");
+    const search_box = document.querySelector("#search_box");
+    const search_btn = document.querySelector("#search_btn");
+    const content_box = document.querySelector(".content");
+
+    function getData(e){
+        e.preventDefault();
+        const apikey = '5b11381bc06a49bfa33f7e993b6a8953';
+        let search_key = search_box.value;
+        let url = `https://newsapi.org/v2/everything?q=${search_key}&apiKey=${apikey}`
+
+        fetch(url).then((res)=>{
+            return res.json();
+        }).then((data)=>{
+            console.log(data);
+          data.articles.forEach(element => {
+            const article_card = document.createElement("article");
+            const head_title = document.createElement("a");
+            const s_paragraph = document.createElement("p");
+            const readmore = document.createElement("span");
+
+            content_box.appendChild(article_card);
+
+            head_title.textContent = element.title;
+            head_title.style.fontSize = "20px";
+            head_title.style.fontWeight = "600";
+            head_title.style.textDecoration = "none";
+            head_title.setAttribute("href",element.url)
+            head_title.style.padding = "5px";
+            head_title.style.margin = "0px";
+
+            s_paragraph.textContent = element.description;
+            s_paragraph.style.padding = "5px 15px";
+            s_paragraph.style.margin = "0px";
+
+            readmore.textContent = "readmore";
+            readmore.style.position = "absolute";
+            readmore.style.bottom = "5px";
+            readmore.style.right = "10px";
+            readmore.style.color = "blue";
+
+            readmore.onclick = ()=>{
+                if(readmore.textContent == "readmore"){
+                    readmore.textContent = "readless";
+                    s_paragraph.textContent = element.content;
+                }else if(readmore.textContent == "readless"){
+                    readmore.textContent = "readmore";
+                    s_paragraph.textContent = element.description;
+                }
+            };
+
+            article_card.appendChild(head_title);
+            article_card.appendChild(s_paragraph);
+            article_card.appendChild(readmore);
+          });
+            
+        }).catch((error)=>{
+            console.log("Error: "+error);
+        })
+    }
+
+    form.addEventListener("submit", getData);
+    // window.addEventListener("load", getData);
+  </script>
+</body>
+</html>

@@ -2,6 +2,14 @@ body{
     margin:0;
     padding:0;
 }
+.background{
+    position: absolute;
+    background: rgb(26 26 26 / 85%);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
 .dark_theme_body{
     background-color: #1F1F1F!important;
 }
@@ -25,24 +33,93 @@ body{
 body h1,h2,p,summary,li,a,legend,button,i{
     font-family: roboto;
 }
+/* features box */
+.features_box{
+    position: fixed;
+    align-items: center;
+    bottom: 10vh;
+    right: 0px;
+    background-color: #9C3E1A;
+    display: flex;
+    border-radius: 5px 0px 0px 5px;
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+}
+.features_box div{
+    cursor: pointer;
+}
+.features_icon{
+    border-right: 1px solid white;
+    padding: 10px 5px;
+}
+.features_box div:nth-child(1){
+    margin: 0px;
+}
+.features_box div{
+    margin: 0px 5px;
+}
 
+
+/* news */
+.main_news{
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    display: none;
+}
+.main_news .header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:#efefef;
+}
+.main_news input[type='submit']{
+    background-color: #cbcbcb;
+    cursor: pointer;
+}
+.main_news input{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+}
+.content_div{
+    position: relative;
+}
+.main_news .content{
+    width: 90%;
+    height: 75vh;
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #efefef;
+    border-radius: 20px;
+    overflow-y: scroll;
+}
+.main_news .content_div .fa-close{
+    float: right;
+    font-size: 20px;
+}
+.main_news article{
+    position: relative;
+    width: 95%;
+    height: fit-content;
+    padding: 5px;
+    margin: 10px auto;
+    border-radius: 20px;
+    background-color: white;
+}
 /* theme toggle */
 .theme_btn{
-    position: fixed;
+    position: relative;
     cursor: pointer;
-    right: 5vh;
-    bottom: 5vh;
-    padding: .6em;
     color: white;
-    background-color: #1F1F1F;
-    border-radius: 50%;
     border: none;
-    box-shadow: 0px 1px 5px #5c5c5ce0;
     overflow: hidden;
     transition: .8s;
 }
 .theme_btn i{
-    font-size:2em;
+    justify-content: center;
 }
 #moonrise{
     color:white;
@@ -265,7 +342,8 @@ details p{
 }
 .photobox{
     width: 100%;
-    margin-bottom: 5em;
+    padding: 2em 0em;
+    background-color: #3d3e2a20;
 }
 .swiper {
     width:1000px!important;
@@ -723,9 +801,6 @@ footer a:hover{
     }
     .swiper-slide img{
         width: 90%;
-    }
-    .photobox{
-        margin-bottom: 2em;
     }
 }
 @media only screen and (min-width:600px){

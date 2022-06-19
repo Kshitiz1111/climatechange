@@ -19,7 +19,6 @@ function dark_theme(){
 
     // 
         change_mode_btn.setAttribute('data','day');
-        change_mode_btn.style.backgroundColor = 'white';
         day_mode.setAttribute('id','sunrise');
         night_mode.setAttribute('id','moonset');
     // 
@@ -46,7 +45,7 @@ function default_theme(){
     // change_mode_btn.textContent = 'Dark';
     // 
     change_mode_btn.setAttribute('data','night');
-    change_mode_btn.style.backgroundColor = '#1F1F1F';
+
     day_mode.setAttribute('id','sunset');
     night_mode.setAttribute('id','moonrise');
     // 

@@ -11,7 +11,9 @@
 
     <script src="https://kit.fontawesome.com/ac673f3b28.js" crossorigin="anonymous"></script>
     <script src="../js/script.js" defer></script>
-    
+    <script src="../js/features_box.js" defer></script>
+    <script src="../js/fetch_news.js" defer></script>
+
     <link
     rel="stylesheet"
     href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
@@ -20,10 +22,35 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="theme_btn" data='night'>
-        <i class="fas fa-moon " id="moonrise"></i>
-        <i class="fas fa-sun " id="sunrise"></i>
+    <div class="background"></div>
+    <div class="features_box">
+        <div class="features_icon"><i class="fa fa-caret-left open"></i><i class="	fa fa-caret-right close"></i></div>
+        <div class="theme_btn" data='night'>
+            <i class="fas fa-moon " id="moonrise"></i>
+            <i class="fas fa-sun " id="sunrise"></i>
+        </div>|
+        <div class="news">
+            <span class="news">news</span>
+        </div>
     </div>
+
+    <div class="main_news">
+        <div class="header">
+            <div class="title"><h2>News</h2></div>
+            <div class="search">
+                <form action="">
+                    <input id="search_box" type="text" value="climate change">
+                    <input id="search_btn" type="submit" value="search">
+                </form>
+            </div>
+        </div>
+        <div class="content_div">
+            <i class="fa fa-close"></i>
+            <div class="content"></div>
+        </div>
+        
+    </div> 
+
     <nav class="dark_theme">
         <div class="primary_container">
            <a href="home.html">
