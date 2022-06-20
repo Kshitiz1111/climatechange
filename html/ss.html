@@ -7,88 +7,235 @@
       name="viewport"
       content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"
     />
-    <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
+    <script src="https://kit.fontawesome.com/ac673f3b28.js" crossorigin="anonymous"></script>
 
     <!-- Demo styles -->
     <style>
-      .swiper {
-        width: 90%;
-        height: 50%;
+      body{
+        margin: 0;
+        padding: 0;
+        background-color: grey;
       }
 
-      .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-      }
-
-      .swiper-slide img {
+      .background_container{
+        width: fit-content;
         display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        margin: 30px auto;
+
       }
+      .module_container{
+        background-color: rgb(212, 212, 212);
+        border-radius: 20px;
+      }
+      .module_container>div{
+        margin: 20px;
+      }
+      .left .up{
+        position: relative;
+        border-bottom: 1px solid white;
+      }
+      .fa-info{
+        position: absolute;
+        top:0;
+        right: 0;
+        font-size: 14px;
+        color: rgb(103, 103, 103);
+      }
+      .down{
+        position: relative;
+        min-height:100px;
+      }
+      .down .points_container{
+        position: absolute;
+        right: 5px;
+        top: 5px;
+      }
+      .points_container>div{
+        width: 10px;
+        height: 10px;
+        margin: 5px;
+      }
+      .points_container .sus{
+        background-color: rgb(31, 83, 255);
+      }
+      .points_container .unsus{
+        background-color: rgb(255, 31, 31);
+      }
+      .input_div>div{
+        margin: 5px;
+      }
+      textarea{
+        border-radius: 20px;
+        padding: 5px;
+      }
+      input{
+        padding: 10px;
+        margin: 5px 0px;
+        border-radius: 20px;
+        border: none;
+      }
+      input[type="number"]{
+        width: 120px;
+      }
+      input[type="radio"]{
+        transform: scale(1.5);
+        margin: 10px;
+      }
+      label[for="sus"]{
+        background-color: rgb(31, 83, 255);
+        color: white;
+        padding: 4px;
+        border-radius: 10px;
+      }
+      label[for="unsus"]{
+        background-color: rgb(255, 31, 31);
+        color: white;
+        padding: 4px;
+        border-radius: 10px;
+      }
+      input[type="submit"]{
+        width: 100%;
+      }
+      .right{
+        position: relative;
+        width: 100px;
+        padding: 10px;
+        border-left: 1px solid white;
+      }
+      .bar>div{
+        width: 30px;
+        margin: 10px;
+        position: absolute;
+        bottom: 0%;
+      }
+      .display_box{
+        float:left;
+        margin-top: 20px;
+      }
+      .positive{
+        background: rgb(31, 83, 255);
+        left: 0;
+      }
+      .negative{
+        background-color: rgb(255, 31, 31);
+        right: 0;
+      }
+      .flex_center{
+        display: flex;
+        justify-content: center;
+      }
+     .flex_item_center{
+      display: flex;
+      align-items: center;
+     }
+     .flex{
+      display: flex;
+     }
     </style>
   </head>
-
   <body>
-    <!-- Swiper -->
-    <div class="swiper mySwiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
-      </div>
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-pagination"></div>
+    <div class="background_container">
+        <div class="module_container flex_center">
+          <div class="left">
+            <div class="up">
+              <i class="fa fa-info"></i>
+              <form action="">
+                <div class="input_div flex_item_center">
+                  <div class="text">
+                    <textarea name="title_box" id="title_box" cols="20" rows="8" placeholder="write an empact you made on climate. It may be sustainable or unsustainable , be honest while giving point."></textarea>
+                  </div>
+                  <div class="point_checker">
+                    <div class="checker">
+                      <input type="radio" id="sus" name="sus" value="sus">
+                      <label for="sus">sustainable</label><br>
+                      <input type="radio" id="unsus" name="sus" value="unsus">
+                      <label for="unsus">unsustainable</label>
+                    </div>
+                    <div class="point">
+                      <input id="points" type="number" placeholder="give point">
+                    </div>
+                  </div>
+                </div>
+                <input type="submit">
+              </form>
+            </div>
+            <div class="down">
+              <div class="points_container flex">
+                <div class="sus"></div><span class="p_point">200</span>
+                <div class="unsus"></div><span class="n_point">50</span>
+              </div>
+              <div class="display_box">
+              
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <p>Empact Tower</p>
+            <div class="bar">
+              <div class="positive">+</div>
+              <div class="negative">-</div>
+            </div>
+
+          </div>
+        </div>
     </div>
 
-    <!-- Swiper JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-
-    <!-- Initialize Swiper -->
-    <script>
-      var swiper = new Swiper(".mySwiper", {
-        spaceBetween: 30,
-        centeredSlides: true,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
-    </script>
   </body>
+
+  <script>
+    const title = document.querySelector("#title_box");
+    const p_empact = document.querySelector("#sus");
+    const n_empact = document.querySelector("#unsus");
+    const point = document.querySelector("#points");
+    const display_area = document.querySelector(".display_box");
+    const p_point = document.querySelector(".p_point");
+    const n_point = document.querySelector(".n_point");
+    const p_bar = document.querySelector(".positive");
+    const n_bar = document.querySelector(".negative");
+    const form = document.querySelector("form");
+    const submit_btn = document.querySelector('input[type="submit"]');
+
+    let positive_empact = 0;
+    let negative_empact = 0;
+
+    function add(){
+      t_value = title.value;
+      p_value = point.value;
+
+      if(t_value != '' && (p_empact.checked || n_empact.checked) && p_value != ''){
+        console.log("hello");
+        const li = document.createElement("li");
+        const span = document.createElement("span");
+
+        span.textContent = p_value;
+        span.style.padding = "1px 4px";
+        span.style.margin = "5px";
+
+        p_empact.checked  == true ?
+        (span.style.backgroundColor = "rgb(31, 83, 255)",span.style.color = "white",positive_empact +=Number(p_value)):
+        (span.style.backgroundColor = "rgb(255, 31, 31)",span.style.color = "white",negative_empact +=Number(p_value));
+    
+        p_point.textContent = positive_empact;
+        n_point.textContent = negative_empact;
+        p_bar.style.height = (positive_empact/10)+'px';
+        n_bar.style.height = (negative_empact/10)+'px';
+
+        li.innerHTML = t_value;
+        li.style.padding = "5px";
+        li.appendChild(span);
+        display_area.append(li);
+        
+
+        
+
+      }else{
+        console.log("bye");
+      }
+    }
+
+    form.onsubmit = (e)=>{
+      e.preventDefault();
+      add();
+    }
+  </script>
 </html>
