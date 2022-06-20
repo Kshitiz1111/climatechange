@@ -14,7 +14,7 @@
       body{
         margin: 0;
         padding: 0;
-        background-color: grey;
+        background-color: rgb(250, 250, 250);
       }
 
       .background_container{
@@ -28,7 +28,10 @@
         border-radius: 20px;
       }
       .module_container>div{
-        margin: 20px;
+        margin: 10px;
+      }
+      .left{
+        border-right: 1px solid white;
       }
       .left .up{
         position: relative;
@@ -37,7 +40,7 @@
       .fa-info{
         position: absolute;
         top:0;
-        right: 0;
+        right: 10px;
         font-size: 14px;
         color: rgb(103, 103, 103);
       }
@@ -54,6 +57,7 @@
         width: 10px;
         height: 10px;
         margin: 5px;
+        border-radius: 5px;
       }
       .points_container .sus{
         background-color: rgb(31, 83, 255);
@@ -100,17 +104,21 @@
         position: relative;
         width: 100px;
         padding: 10px;
-        border-left: 1px solid white;
+
       }
       .bar>div{
         width: 30px;
         margin: 10px;
         position: absolute;
         bottom: 0%;
+        border-radius: 10px 10px 0px 0px;
       }
       .display_box{
         float:left;
+        width: 350px;
+        height: 200px;
         margin-top: 20px;
+        overflow-y: scroll;
       }
       .positive{
         background: rgb(31, 83, 255);
@@ -130,6 +138,11 @@
      }
      .flex{
       display: flex;
+     }
+     @media only screen and (max-width:600px){
+      .flex_center{
+        flex-flow: wrap;
+      }
      }
     </style>
   </head>
@@ -152,7 +165,7 @@
                       <label for="unsus">unsustainable</label>
                     </div>
                     <div class="point">
-                      <input id="points" type="number" placeholder="give point">
+                      <input id="points" type="number" min="1" max="50" placeholder="give point">
                     </div>
                   </div>
                 </div>
@@ -161,8 +174,8 @@
             </div>
             <div class="down">
               <div class="points_container flex">
-                <div class="sus"></div><span class="p_point">200</span>
-                <div class="unsus"></div><span class="n_point">50</span>
+                <div class="sus"></div><span class="p_point">0</span>
+                <div class="unsus"></div><span class="n_point">0</span>
               </div>
               <div class="display_box">
               
@@ -172,15 +185,15 @@
           <div class="right">
             <p>Empact Tower</p>
             <div class="bar">
-              <div class="positive">+</div>
-              <div class="negative">-</div>
+              <div class="positive"></div>
+              <div class="negative"></div>
             </div>
 
           </div>
         </div>
     </div>
-
   </body>
+
 
   <script>
     const title = document.querySelector("#title_box");
@@ -194,6 +207,8 @@
     const n_bar = document.querySelector(".negative");
     const form = document.querySelector("form");
     const submit_btn = document.querySelector('input[type="submit"]');
+    const module = document.querySelector('.module_container');
+
 
     let positive_empact = 0;
     let negative_empact = 0;
@@ -203,13 +218,24 @@
       p_value = point.value;
 
       if(t_value != '' && (p_empact.checked || n_empact.checked) && p_value != ''){
-        console.log("hello");
+        
+        const d = new Date();
+        let date_str = `${d.getFullYear()}:${d.getMonth()}:${d.getDate()}`;
+
         const li = document.createElement("li");
         const span = document.createElement("span");
+        const date = document.createElement("span");
 
         span.textContent = p_value;
         span.style.padding = "1px 4px";
         span.style.margin = "5px";
+        span.style.borderRadius = "5px";
+
+        date.textContent = date_str;
+        date.style.backgroundColor = "#a5a5a5";
+        date.style.color = "white";
+        date.style.padding = "1px 4px";
+        date.style.borderRadius = "5px";
 
         p_empact.checked  == true ?
         (span.style.backgroundColor = "rgb(31, 83, 255)",span.style.color = "white",positive_empact +=Number(p_value)):
@@ -222,11 +248,10 @@
 
         li.innerHTML = t_value;
         li.style.padding = "5px";
+        li.style.wordBreak = "break-word"
         li.appendChild(span);
+        li.append(date)
         display_area.append(li);
-        
-
-        
 
       }else{
         console.log("bye");
@@ -236,6 +261,22 @@
     form.onsubmit = (e)=>{
       e.preventDefault();
       add();
+    }
+
+    submit_btn.onclick = ()=>{
+    let a = (module.clientHeight)-100;
+    let b = p_bar.clientHeight;
+    let c = n_bar.clientHeight;
+        if(b>a || c>a){
+           let confirm = prompt("your have reached your limit. enter 'yes' to reload 'no' to stay","yes");
+           if(confirm == "yes"){
+           form.submit();
+           }else if(confirm == "no"){
+              console.log("stay mode on");
+           }
+        }else{
+            console.log("not yet");
+        }
     }
   </script>
 </html>
