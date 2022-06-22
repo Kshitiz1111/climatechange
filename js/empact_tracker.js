@@ -108,7 +108,7 @@ function display(){
             
             console.log(cursor);
             cursor.value.sus  == true ?
-            (span.style.backgroundColor = "rgb(31, 83, 255)",
+            (span.style.backgroundColor = "#00813e",
             span.style.color = "white",
             positive_empact += Number(cursor.value.point),
             p_point.textContent = positive_empact,

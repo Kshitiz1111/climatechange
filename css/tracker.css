@@ -1,0 +1,144 @@
+section{
+    margin: 3em;
+    padding: 20px;
+    height: 100%;
+}
+h2,li,span,p,label,input{
+    font-family: roboto;
+}
+h2{
+    color:#3D3E2A;
+    text-align: center;
+}
+.fa-home{
+    color: rgb(52, 52, 52);
+    font-size: 20px;
+    transition: 0.5s;
+}
+.fa-home:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: 0.5s;
+}
+img{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
+.background_container{
+    width: fit-content;
+    display: block;
+  }
+  .module_container{
+    border-radius: 20px;
+  }
+  .module_container>div{
+    margin: 10px;
+  }
+  .left{
+    border-right: 1px solid white;
+  }
+  .left .up{
+    position: relative;
+    border-bottom: 1px solid white;
+  }
+
+  .down{
+    position: relative;
+    min-height:100px;
+  }
+  .down .points_container{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+  .points_container>div{
+    width: 10px;
+    height: 10px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  .points_container .sus{
+    background-color: #00813e;
+  }
+  .points_container .unsus{
+    background-color: rgb(255, 31, 31);
+  }
+  .input_div>div{
+    margin: 5px;
+  }
+  textarea{
+    border-radius: 20px;
+    padding: 5px;
+    background-color: #98bd7eba;
+  }
+  input{
+    padding: 10px;
+    margin: 5px 0px;
+    border-radius: 20px;
+    border: none;
+    background-color: #98bd7eba;
+  }
+  input[type="number"]{
+    width: 120px;
+  }
+  input[type="radio"]{
+    transform: scale(1.5);
+    margin: 10px;
+  }
+  label[for="sus"]{
+    background-color: #00813e;
+    color: white;
+    padding: 4px;
+    border-radius: 10px;
+  }
+  label[for="unsus"]{
+    background-color: rgb(255, 31, 31);
+    color: white;
+    padding: 4px;
+    border-radius: 10px;
+  }
+  input[type="submit"]{
+    width: 100%;
+  }
+  .right{
+    position: relative;
+    width: 100px;
+    padding: 10px;
+
+  }
+  .bar>div{
+    width: 30px;
+    margin: 10px;
+    position: absolute;
+    bottom: 0%;
+    border-radius: 10px 10px 0px 0px;
+  }
+  .display_box{
+    float:left;
+    width: 350px;
+    height: 200px;
+    margin-top: 20px;
+    overflow-y: scroll;
+  }
+  .positive{
+    background: #00813e;
+    left: 0;
+  }
+  .negative{
+    background-color: rgb(255, 31, 31);
+    right: 0;
+  }
+  .flex_center{
+    display: flex;
+    justify-content: center;
+  }
+ .flex_item_center{
+  display: flex;
+  align-items: center;
+ }
+ .flex{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+ }

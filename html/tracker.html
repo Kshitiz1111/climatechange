@@ -1,1 +1,71 @@
-!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/tracker.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <script src="https://kit.fontawesome.com/ac673f3b28.js" crossorigin="anonymous"></script>
+
+    <script src="../js/empact_tracker.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+<section>
+<a href="../html/home.html"><i class="fa fa-home"></i></a>
+<div class="flex">
+    <div>
+        <h2>Track Your Empact On Climate Change</h2>
+        <img src="../image/focus.png" alt="">
+    </div>
+
+    <div class="background_container">
+        <div class="module_container flex">
+          <div class="left">
+            <div class="up">
+              <form action="">
+                <div class="input_div flex_item_center">
+                  <div class="text">
+                    <textarea name="title_box" id="title_box" cols="20" rows="8" placeholder="write an empact you made on climate. It may be sustainable or unsustainable , be honest while giving point."></textarea>
+                  </div>
+                  <div class="point_checker">
+                    <div class="checker">
+                      <input type="radio" id="sus" name="sus" value="sus">
+                      <label for="sus">sustainable</label><br>
+                      <input type="radio" id="unsus" name="sus" value="unsus">
+                      <label for="unsus">unsustainable</label>
+                    </div>
+                    <div class="point">
+                      <input id="points" type="number" min="1" max="50" placeholder="point">
+                    </div>
+                  </div>
+                </div>
+                <input type="submit">
+              </form>
+            </div>
+            <div class="down">
+              <div class="points_container flex">
+                <div class="sus"></div><span class="p_point"></span>
+                <div class="unsus"></div><span class="n_point"></span>
+              </div>
+              <div class="display_box">
+              
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <p>Empact Tower</p>
+            <div class="bar">
+              <div class="positive"></div>
+              <div class="negative"></div>
+            </div>
+
+          </div>
+        </div>
+    </div>
+</div>    
+</section>
+    
+</body>
+</html>

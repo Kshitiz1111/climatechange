@@ -121,7 +121,8 @@ c_pwd.onblur = ()=>{
 function finalCheck(){
     if(u_name.style.borderColor == 'rgb(0, 149, 169)' && u_email.style.borderColor == 'rgb(0, 149, 169)' && pwd.style.borderColor == 'rgb(0, 149, 169)' && c_pwd.style.borderColor == 'rgb(0, 149, 169)')
     { 
-        document.getElementById("form").submit();    
+        document.getElementById("form").submit();
+        location.href="../html/login.html";       
     }else{
        alert("validations failed");
     } 
@@ -129,7 +130,8 @@ function finalCheck(){
 function finalCheck1(){
     if(u_name.style.borderColor == 'rgb(0, 149, 169)' && pwd.style.borderColor == 'rgb(0, 149, 169)')
     { 
-        document.getElementById("form").submit();    
+        document.getElementById("form").submit(); 
+        location.href="../html/home.html";   
     }else{
        alert("validations failed");
     } 
