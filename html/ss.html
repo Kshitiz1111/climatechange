@@ -226,7 +226,7 @@
 
     //assigning database object into db variabel;
     db = openRequest.result;
-    displayData();
+    display();
     });
 
     openRequest.addEventListener("upgradeneeded", e =>{
@@ -269,7 +269,10 @@
         transaction.addEventListener('complete', ()=>{
           console.log("transaction completed and data has been modified");
 
-          displayData();
+          display();
+         positive_empact = 0;
+         negative_empact = 0;
+
         });
         transaction.addEventListener('error', () => console.log('Transaction not opened due to error'));
 
@@ -279,7 +282,7 @@
 
     }
 
-    function displayData(){
+    function display(){
       while(display_area.firstChild){
             display_area.removeChild(display_area.firstChild);
           }
@@ -300,49 +303,54 @@
               li.innerHTML = cursor.value.title;
               span.textContent = cursor.value.point;
               date.textContent = cursor.value.time_stamp;
+              
+              console.log(cursor);
               cursor.value.sus  == true ?
-              (span.style.backgroundColor = "rgb(31, 83, 255)",span.style.color = "white",positive_empact += Number(cursor.value.point),console.log("hello1")):
-              (span.style.backgroundColor = "rgb(255, 31, 31)",span.style.color = "white",negative_empact += Number(cursor.value.point),console.log("hello2"));
-          
-              p_point.textContent = positive_empact;
-              n_point.textContent = negative_empact;
+              (span.style.backgroundColor = "rgb(31, 83, 255)",
+                span.style.color = "white",
+                positive_empact += Number(cursor.value.point),
+                p_point.textContent = positive_empact,
+                console.log(positive_empact),
+                p_bar.style.height = (positive_empact/10)+'px') 
+              :
+              (span.style.backgroundColor = "rgb(255, 31, 31)",
+              span.style.color = "white",
+              negative_empact += Number(cursor.value.point),
+              n_point.textContent = negative_empact,
+              console.log(negative_empact),
+              n_bar.style.height = (negative_empact/10)+'px');
 
               span.style.padding = "1px 4px";
-            span.style.margin = "5px";
-            span.style.borderRadius = "5px";
+              span.style.margin = "5px";
+              span.style.borderRadius = "5px";
 
-            // date.textContent = date_str;
-            date.style.backgroundColor = "#a5a5a5";
-            date.style.color = "white";
-            date.style.padding = "1px 4px";
-            date.style.borderRadius = "5px";
+              // date.textContent = date_str;
+              date.style.backgroundColor = "#a5a5a5";
+              date.style.color = "white";
+              date.style.padding = "1px 4px";
+              date.style.borderRadius = "5px";
 
-          
-            p_bar.style.height = (positive_empact/10)+'px';
-            n_bar.style.height = (negative_empact/10)+'px';
+              // li.innerHTML = t_value;
+              li.style.padding = "5px";
+              li.style.wordBreak = "break-word";
+              li.appendChild(span);
+              li.append(date);
+              display_area.append(li);
 
-            // li.innerHTML = t_value;
-            li.style.padding = "5px";
-            li.style.wordBreak = "break-word";
-            li.appendChild(span);
-            li.append(date);
-            display_area.append(li);
-
-            li.setAttribute('data-note-id', cursor.value.id);
-            cursor.continue();
-
+              li.setAttribute('data-note-id', cursor.value.id);
+              cursor.continue();
+              
             }else {
               // Again, if list item is empty, display a 'No notes stored' message
               if(!display_area.firstChild) {
                 const newList = document.createElement('li');
-                newList.textContent = 'No notes stored.'
+                newList.textContent = 'list is empty'
                 display_area.appendChild(newList);
               }
               // if there are no more cursor items to iterate through, say so
               console.log('all data is iterated');
             }
 
-            
           });
       }
       
@@ -351,21 +359,21 @@
       add();
     }
 
-    // submit_btn.onclick = ()=>{
-    // let a = (module.clientHeight)-100;
-    // let b = p_bar.clientHeight;
-    // let c = n_bar.clientHeight;
-    //     if(b>a || c>a){
-    //        let confirm = prompt("your have reached your limit. enter 'yes' to reload 'no' to stay","yes");
-    //        if(confirm == "yes"){
-    //        form.submit();
-    //        }else if(confirm == "no"){
-    //           console.log("stay mode on");
-    //        }
-    //     }else{
-    //         console.log("not yet");
-    //     }
-    // }
+    submit_btn.onclick = ()=>{
+    let a = (module.clientHeight)-100;
+    let b = p_bar.clientHeight;
+    let c = n_bar.clientHeight;
+        if(b>a || c>a){
+           let confirm = prompt("your have reached your limit. enter 'yes' to reload 'no' to stay","yes");
+           if(confirm == "yes"){
+           form.submit();
+           }else if(confirm == "no"){
+              console.log("stay mode on");
+           }
+        }else{
+            console.log("not yet");
+        }
+    }
 
     
   </script>
